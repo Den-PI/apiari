@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пчелина на Пламен - Натурални пчелни продукти</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #FFF8E1;
+            color: #5D4037;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #FFD54F;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #5D4037;
+        }
+
+        .logo img {
+            margin-right: 10px;
+            width: 40px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #5D4037;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #FFA000;
+        }
+
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            background-image: linear-gradient(rgba(255, 248, 225, 0.8), rgba(255, 248, 225, 0.8)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #5D4037;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #FFA000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #FF8F00;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: #5D4037;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #5D4037;
+        }
+
+        .product-info p {
+            color: #795548;
+            margin-bottom: 15px;
+        }
+
+        .contact {
+            background-color: #FFF3E0;
+            padding: 60px 0;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .contact-details {
+            margin-bottom: 20px;
+        }
+
+        .contact-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-details p i {
+            margin-right: 10px;
+            color: #FFA000;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .form-group textarea {
+            height: 150px;
+        }
+
+        footer {
+            background-color: #5D4037;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 20px;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .contact-info,
+            .contact-form {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="/api/placeholder/40/40" alt="Logo">
+                    <span>Пчелина на Пламен</span>
+                </div>
+                <ul>
+                    <li><a href="#home">Начало</a></li>
+                    <li><a href="#gallery">Галерия</a></li>
+                    <li><a href="#products">Продукти</a></li>
+                    <li><a href="#contact">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Медът от пчелина на Пламен</h1>
+            <p>Чист мед, директно от пчелина</p>
+            <a href="#products" class="btn">Разгледайте продуктите</a>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <h2>Снимки от пчелина</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/200" alt="Пчелин 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/200" alt="Пчелин 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/200" alt="Пчелин 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/200" alt="Пчела върху цвете">
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/200" alt="Рамка с мед">
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/200" alt="Пчели работнички">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <h2>Продукти</h2>
+            <div class="products">
+                <div class="product-card">
+                    <img src="/api/placeholder/250/200" alt="Мед" class="product-img">
+                    <div class="product-info">
+                        <h3>Мед</h3>
+                        <p>Чист мед, произведен от пчели от пчелина ни.</p>
+                        <a href="#" class="btn">Научи повече</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/api/placeholder/250/200" alt="Пчелен прашец" class="product-img">
+                    <div class="product-info">
+                        <h3>Пчелен прашец</h3>
+                        <p>Богат на хранителни вещества, идеален за подсилване на имунната система.</p>
+                        <a href="#" class="btn">Научи повече</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/api/placeholder/250/200" alt="Пчелно млечице" class="product-img">
+                    <div class="product-info">
+                        <h3>Пчелно млечице</h3>
+                        <p>Естествен стимулатор на имунната система.</p>
+                        <a href="#" class="btn">Научи повече</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/api/placeholder/250/200" alt="Медовина" class="product-img">
+                    <div class="product-info">
+                        <h3>Медовина</h3>
+                        <p>Създадена с наш мед и продукти от нашата градина.</p>
+                        <a href="#" class="btn">Научи повече</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Контакти</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Свържете се с нас</h3>
+                    <div class="contact-details">
+                        <p><i>✉️</i> Email: plamen@pchelin.bg</p>
+                        <p><i>📞</i> Телефон: +359 888 123 456</p>
+                    </div>
+                    <div>
+                        <h3>Работно време</h3>
+                        <p>Понеделник - Петък: 9:00 - 17:00</p>
+                        <p>Събота: 10:00 - 14:00</p>
+                        <p>Неделя: Затворено</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Изпратете съобщение</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Име</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Съобщение</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Изпрати</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Пчелина на Пламен. Всички права запазени.</p>
+        </div>
+    </footer>
+</body>
+</html>
