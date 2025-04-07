@@ -82,10 +82,10 @@
             background-size: cover;
             background-position: center;
             position: relative;
-            color: white; /* Променен цвят на текста за по-добра четимост върху изображението */
+            color: white;
         }
 
-        .hero:before { /* Добавен overlay за по-добра четимост на текста */
+        .hero:before {
             content: "";
             position: absolute;
             top: 0;
@@ -103,7 +103,7 @@
         .hero h1 {
             font-size: 42px;
             margin-bottom: 20px;
-            color: white; /* Променен цвят на текста */
+            color: white;
         }
 
         .hero p {
@@ -150,6 +150,7 @@
             overflow: hidden;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
+            cursor: pointer;
         }
 
         .gallery-item:hover {
@@ -160,6 +161,57 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
+            display: block;
+        }
+
+        /* Модален прозорец за галерията */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            animation: zoom 0.3s ease;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0.1)}
+            to {transform: scale(1)}
         }
 
         .products {
@@ -204,31 +256,26 @@
         .contact {
             background-color: #FFF3E0;
             padding: 60px 0;
-            align-items: center;
         }
 
         .contact-container {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            align-items: center;
         }
 
         .contact-info {
             flex: 1;
             min-width: 300px;
-             align-items: center;
         }
 
         .contact-info h3 {
             margin-bottom: 20px;
             font-size: 24px;
-             align-items: center;
         }
 
         .contact-details {
             margin-bottom: 20px;
-            align-items: center;
         }
 
         .contact-details p {
@@ -240,7 +287,6 @@
         .contact-details p i {
             margin-right: 10px;
             color: #FFA000;
-            align-items: center;
         }
 
         .contact-form {
@@ -288,12 +334,15 @@
 
             .contact-container {
                 flex-direction: column;
-                text-align: center;
             }
 
             .contact-info,
             .contact-form {
                 margin-bottom: 30px;
+            }
+            
+            .modal-content {
+                max-width: 95%;
             }
         }
     </style>
