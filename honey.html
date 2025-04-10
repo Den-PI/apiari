@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медът на Пламен - Натурален пчелен мед</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #FFF8E1;
+            color: #5D4037;
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #FFD54F;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #5D4037;
+        }
+
+        .logo img {
+            margin-right: 10px;
+            width: 40px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #5D4037;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #FFA000;
+        }
+
+        .hero {
+            padding: 120px 0;
+            text-align: center;
+            background-image: url('/api/placeholder/1200/500');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+        }
+
+        .hero:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #FFA000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #FF8F00;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: #5D4037;
+        }
+
+        .about-honey {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-honey p {
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+
+        .about-honey ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .about-honey li {
+            margin-bottom: 8px;
+        }
+
+        .honey-types {
+            margin-top: 60px;
+        }
+
+        .honey-type {
+            display: flex;
+            margin-bottom: 40px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .honey-img {
+            flex: 0 0 40%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .honey-info {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .honey-info h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #5D4037;
+        }
+
+        .honey-info p {
+            margin-bottom: 15px;
+            color: #795548;
+        }
+
+        .honey-benefits {
+            margin-top: 20px;
+        }
+
+        .honey-benefits h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        footer {
+            background-color: #5D4037;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 20px;
+            }
+
+            .honey-type {
+                flex-direction: column;
+            }
+
+            .honey-img {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="/api/placeholder/40/40" alt="Logo">
+                    <span>Медът на Пламен</span>
+                </div>
+                <ul>
+                    <li><a href="#home">Начало</a></li>
+                    <li><a href="#about">За меда</a></li>
+                    <li><a href="#types">Видове мед</a></li>
+                    <li><a href="#contact">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Натурален пчелен мед</h1>
+            <p>Чист мед, директно от пчелина на Пламен</p>
+            <a href="#types" class="btn">Разгледайте видовете мед</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>За меда</h2>
+            <div class="about-honey">
+                <p>Медът е една от най-ценните храни в природата, събирана от пчелите с любов и грижа. В нашия пчелин се грижим за нашите пчели и им осигуряваме достъп до чисти екологични райони, богати на разнообразна растителност.</p>
+                
+                <p>Медът е не само вкусна храна, но и естествен лек, използван от хилядолетия. Той съдържа над 180 различни вещества, включително:</p>
+                
+                <ul>
+                    <li>Витамини: B1, B2, B3, B5, B6, C, K и други</li>
+                    <li>Минерали: калций, магнезий, калий, фосфор, цинк и желязо</li>
+                    <li>Антиоксиданти, които помагат за борбата със свободните радикали</li>
+                    <li>Ензими, които подпомагат храносмилането</li>
+                </ul>
+                
+                <p>Нашият мед е <strong>100% натурален</strong>, без добавени захари, консерванти или други добавки. Събираме го с грижа и любов, запазвайки всички негови полезни свойства. При нас медът не се филтрира прекомерно и не се пастьоризира, за да запази максимално полезните си съставки.</p>
+                
+                <p>Консумацията на мед е полезна за:</p>
+                
+                <ul>
+                    <li>Укрепване на имунната система</li>
+                    <li>Облекчаване на кашлица и възпалено гърло</li>
+                    <li>Подобряване на храносмилането</li>
+                    <li>Източник на бърза и здравословна енергия</li>
+                    <li>Подпомагане зарастването на рани и изгаряния (при външно приложение)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="types">
+        <div class="container">
+            <h2>Видове мед</h2>
+            <div class="honey-types">
+                <div class="honey-type">
+                    <img src="/api/placeholder/400/300" alt="Акациев мед" class="honey-img">
+                    <div class="honey-info">
+                        <h3>Акациев мед</h3>
+                        <p>Акациевият мед е един от най-ценените видове мед, известен със своя нежен вкус и светъл, почти прозрачен цвят. Той се събира от цветовете на бялата акация (Robinia pseudoacacia), която цъфти през май-юни.</p>
+                        
+                        <p>Този мед кристализира по-бавно от другите видове, което го прави предпочитан за директна консумация. Има нежен, фин аромат и приятен, не твърде сладък вкус.</p>
+                        
+                        <div class="honey-benefits">
+                            <h4>Полезни свойства:</h4>
+                            <ul>
+                                <li>Подпомага при проблеми с храносмилателната система</li>
+                                <li>Има успокояващо действие върху нервната система</li>
+                                <li>Помага при безсъние и стрес</li>
+                                <li>Благоприятен за хора с диабет (поради по-ниското съдържание на захари)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="honey-type">
+                    <img src="/api/placeholder/400/300" alt="Липов мед" class="honey-img">
+                    <div class="honey-info">
+                        <h3>Липов мед</h3>
+                        <p>Липовият мед има специфичен и силен аромат на липов цвят, който се усеща от разстояние. Цветът му варира от светложълт до тъмножълт с леки зеленикави нюанси. Събира се през юни, когато липите цъфтят в пълния си блясък.</p>
+                        
+                        <p>Вкусът на липовия мед е изключително приятен, с характерни ментови нотки. Кристализира сравнително бавно, като запазва кремообразна консистенция.</p>
+                        
+                        <div class="honey-benefits">
+                            <h4>Полезни свойства:</h4>
+                            <ul>
+                                <li>Отлично средство при простудни заболявания</li>
+                                <li>Има силно противовъзпалително действие</li>
+                                <li>Помага при кашлица и възпалено гърло</li>
+                                <li>Подпомага при проблеми с дихателната система</li>
+                                <li>Има лек успокояващ ефект и помага при безсъние</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="honey-type">
+                    <img src="/api/placeholder/400/300" alt="Слънчогледов мед" class="honey-img">
+                    <div class="honey-info">
+                        <h3>Слънчогледов мед</h3>
+                        <p>Слънчогледовият мед е един от най-разпространените видове в България. Има наситен златистожълт цвят и характерен аромат, напомнящ за полето със слънчогледи. Събира се през юли и август.</p>
+                        
+                        <p>Този вид мед кристализира сравнително бързо (обикновено за 1-2 месеца), като придобива фина кремообразна структура. Има силен и приятен вкус.</p>
+                        
+                        <div class="honey-benefits">
+                            <h4>Полезни свойства:</h4>
+                            <ul>
+                                <li>Богат на витамин Е и магнезий</li>
+                                <li>Подпомага сърдечно-съдовата система</li>
+                                <li>Действа благоприятно върху храносмилателната система</li>
+                                <li>Има силни антиоксидантни свойства</li>
+                                <li>Подпомага имунната система и дава бърза енергия</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Медът на Пламен. Всички права запазени.</p>
+            <p>За контакти: +359 888 123 456 | plamen@pchelin.bg</p>
+        </div>
+    </footer>
+</body>
+</html>
